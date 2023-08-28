@@ -1,12 +1,12 @@
 {
-    "name": "amvisor/filament-failed-jobs",
+    "name": "adrolli/filament-failed-jobs",
     "description": "A simplistics failed jobs viewer for your Filament apps.",
     "keywords": [
         "laravel",
         "filament",
         "filament-failed-jobs"
     ],
-    "homepage": "https://gitlab.com/amvisor/filament-failed-jobs",
+    "homepage": "https://github.com/adrolli/filament-failed-jobs",
     "license": "MIT",
     "authors": [
         {
@@ -18,8 +18,8 @@
     "require": {
         "php": "^8.0.2",
         "spatie/laravel-package-tools": "^1.9.2",
-        "invaders-xx/filament-jsoneditor": "^0.6",
-        "filament/filament": "^2.0"
+        "invaders-xx/filament-jsoneditor": "^3.0",
+        "filament/filament": "^3.0"
     },
     "require-dev": {},
     "autoload": {
