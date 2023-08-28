@@ -33,8 +33,12 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Amvisor\\FilamentFailedJobs\\FilamentFailedJobsServiceProvider"
-            ]
+                "Amvisor\\FilamentFailedJobs\\FilamentFailedJobsServiceProvider",
+                "Amvisor\\FilamentFailedJobs\\JobMonitorProvider"
+            ],
+            "aliases": {
+                "JobMonitor": "Amvisor\\FilamentFailedJobs\\QueueMonitorProvider\\Facade"
+            }
         }
     },
     "minimum-stability": "dev",

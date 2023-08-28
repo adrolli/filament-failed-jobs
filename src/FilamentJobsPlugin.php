@@ -7,7 +7,7 @@ use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 
-class FilamentFailedJobsPlugin implements Plugin
+class FilamentJobsPlugin implements Plugin
 {
     use EvaluatesClosures;
 
@@ -66,7 +66,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getId(): string
     {
-        return 'filament-failed-jobs';
+        return 'filament-jobs';
     }
 
     /**
@@ -108,7 +108,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getResource(): string
     {
-        return $this->resource ?? config('filament-failed-jobs.resources.failed_jobs.resource');
+        return $this->resource ?? config('filament-failed-jobs.resources.jobs.resource');
     }
 
     /**
@@ -126,7 +126,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getLabel(): ?string
     {
-        return $this->evaluate($this->label) ?? config('filament-failed-jobs.resources.failed_jobs.label');
+        return $this->evaluate($this->label) ?? config('filament-failed-jobs.resources.jobs.label');
     }
 
     /**
@@ -144,7 +144,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getPluralLabel(): ?string
     {
-        return $this->evaluate($this->pluralLabel) ?? config('filament-failed-jobs.resources.failed_jobs.plural_label');
+        return $this->evaluate($this->pluralLabel) ?? config('filament-failed-jobs.resources.jobs.plural_label');
     }
 
     /**
@@ -162,7 +162,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getNavigationGroup(): ?string
     {
-        return $this->navigationGroup ?? config('filament-failed-jobs.resources.failed_jobs.navigation_group');
+        return $this->navigationGroup ?? config('filament-failed-jobs.resources.jobs.navigation_group');
     }
 
     /**
@@ -180,7 +180,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getNavigationIcon(): ?string
     {
-        return $this->navigationIcon ?? config('filament-failed-jobs.resources.failed_jobs.navigation_icon');
+        return $this->navigationIcon ?? config('filament-failed-jobs.resources.jobs.navigation_icon');
     }
 
     /**
@@ -198,7 +198,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getNavigationSort(): ?int
     {
-        return $this->navigationSort ?? config('filament-failed-jobs.resources.failed_jobs.navigation_sort');
+        return $this->navigationSort ?? config('filament-failed-jobs.resources.jobs.navigation_sort');
     }
 
     /**
@@ -216,7 +216,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getNavigationCountBadge(): ?bool
     {
-        return $this->navigationCountBadge ?? config('filament-failed-jobs.resources.failed_jobs.navigation_count_badge');
+        return $this->navigationCountBadge ?? config('filament-failed-jobs.resources.jobs.navigation_count_badge');
     }
 
     /**
@@ -234,7 +234,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function shouldRegisterNavigation(): bool
     {
-        return $this->navigation ?? config('filament-failed-jobs.resources.failed_jobs.enabled');
+        return $this->navigation ?? config('filament-failed-jobs.resources.jobs.enabled');
     }
 
     /**
@@ -252,7 +252,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getPruning(): ?bool
     {
-        return $this->pruning ?? config('filament-failed-jobs.pruning.enabled');
+        return $this->pruning ?? config('filament-jobs.pruning.enabled');
     }
 
     /**
@@ -270,7 +270,7 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getPruningRetention(): ?int
     {
-        return $this->pruningRetention ?? config('filament-failed-jobs.pruning.retention_days');
+        return $this->pruningRetention ?? config('filament-jobs.pruning.retention_days');
     }
 
     /**
@@ -288,6 +288,6 @@ class FilamentFailedJobsPlugin implements Plugin
      */
     public function getBreadcrumb(): string
     {
-        return __('filament-failed-jobs::translations.breadcrumb');
+        return __('filament-jobs::translations.breadcrumb');
     }
 }

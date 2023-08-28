@@ -2,27 +2,62 @@
 
 namespace Amvisor\FilamentFailedJobs\Resources;
 
+use Amvisor\FilamentFailedJobs\FilamentJobBatchesPlugin;
 use Amvisor\FilamentFailedJobs\Models\JobBatch;
 use Amvisor\FilamentFailedJobs\Resources\JobBatchesResource\Pages\ListJobBatches;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 class JobBatchesResource extends Resource
 {
     protected static ?string $model = JobBatch::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-view-list';
+    public static function getNavigationBadge(): ?string
+    {
+        return FilamentJobBatchesPlugin::get()->getNavigationCountBadge() ? number_format(static::getModel()::count()) : null;
+    }
+
+    public static function getModelLabel(): string
+    {
+        return FilamentJobBatchesPlugin::get()->getLabel();
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return FilamentJobBatchesPlugin::get()->getPluralLabel();
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return Str::title(static::getPluralModelLabel()) ?? Str::title(static::getModelLabel());
+    }
 
     public static function getNavigationGroup(): ?string
     {
-        return __(config('filament-failed-jobs.navigation-group', 'Jobs'));
+        return FilamentJobBatchesPlugin::get()->getNavigationGroup();
     }
 
-    public static function getNavigationBadge(): ?string
+    public static function getNavigationSort(): ?int
     {
-        return (string) JobBatch::query()->count();
+        return FilamentJobBatchesPlugin::get()->getNavigationSort();
+    }
+
+    public static function getBreadcrumb(): string
+    {
+        return FilamentJobBatchesPlugin::get()->getBreadcrumb();
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return FilamentJobBatchesPlugin::get()->shouldRegisterNavigation();
+    }
+
+    public static function getNavigationIcon(): string
+    {
+        return FilamentJobBatchesPlugin::get()->getNavigationIcon();
     }
 
     public static function table(Table $table): Table
