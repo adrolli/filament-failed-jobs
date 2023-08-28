@@ -1,0 +1,42 @@
+{
+    "name": "amvisor/filament-failed-jobs",
+    "description": "A simplistics failed jobs viewer for your Filament apps.",
+    "keywords": [
+        "laravel",
+        "filament",
+        "filament-failed-jobs"
+    ],
+    "homepage": "https://gitlab.com/amvisor/filament-failed-jobs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Herbert Maschke",
+            "email": "thyseus@pm.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "invaders-xx/filament-jsoneditor": "^0.6",
+        "filament/filament": "^2.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Amvisor\\FilamentFailedJobs\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Amvisor\\FilamentFailedJobs\\FilamentFailedJobsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
