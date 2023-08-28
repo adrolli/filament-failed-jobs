@@ -1,10 +1,8 @@
-# A simple failed jobs viewer for your Filament apps.
+# Filament Job Manager
 
-This package provides a `Failed Jobs` resource that allows you to view your Failed jobs in a simple UI.
-If you are using the Job Batches Feature, a `Job Batches` resource is displayed also.
+Work in progress ... 
 
-![image-1.png](./image-1.png)
-![image-2.png](./image-2.png)
+
 
 ## Installation
 

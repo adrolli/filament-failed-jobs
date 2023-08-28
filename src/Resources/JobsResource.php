@@ -5,6 +5,7 @@ namespace Amvisor\FilamentFailedJobs\Resources;
 use Amvisor\FilamentFailedJobs\FilamentJobsPlugin;
 use Amvisor\FilamentFailedJobs\Models\Job;
 use Amvisor\FilamentFailedJobs\Resources\JobsResource\Pages\ListJobs;
+use Amvisor\FilamentFailedJobs\Resources\JobsResource\Widgets\JobStatsOverview;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -133,6 +134,13 @@ class JobsResource extends Resource
     {
         return [
             'index' => ListJobs::route('/'),
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            JobStatsOverview::class,
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace Amvisor\FilamentFailedJobs\Resources\JobsResource\Pages;
 
 use Amvisor\FilamentFailedJobs\Resources\JobsResource;
-use Amvisor\FilamentFailedJobs\Resources\JobsResource\Widgets\QueueStatsOverview;
+use Amvisor\FilamentFailedJobs\Resources\JobsResource\Widgets\JobStatsOverview;
 use Filament\Resources\Pages\ListRecords;
 
 class ListJobs extends ListRecords
@@ -18,7 +18,7 @@ class ListJobs extends ListRecords
     public function getHeaderWidgets(): array
     {
         return [
-            QueueStatsOverview::class,
+            JobStatsOverview::class,
         ];
     }
 
