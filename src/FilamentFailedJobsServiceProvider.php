@@ -2,23 +2,17 @@
 
 namespace Amvisor\FilamentFailedJobs;
 
-use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Amvisor\FilamentFailedJobs\Resources\FailedJobsResource;
 use Amvisor\FilamentFailedJobs\Resources\JobBatchesResource;
 use Illuminate\Support\Facades\Schema;
 
-class FilamentFailedJobsServiceProvider extends PluginServiceProvider
+class FilamentFailedJobsServiceProvider extends PackageServiceProvider
 {
-	public static string $name = 'filament-failed-jobs';
-
-	protected array $resources = [
-		FailedJobsResource::class,
-	];
-
-	public function configurePackage(Package $package): void
-	{
-		$package->name('filament-failed-jobs');
+    public function configurePackage(Package $package): void
+    {
+        $package->name('filament-failed-jobs');
 
 		$this->publishes([
             __DIR__ . '/../config/filament-failed-jobs.php' => config_path('filament-failed-jobs.php'),
