@@ -1,3 +1,8 @@
+# Moved
+
+This plugin is now part of https://github.com/mooxphp/jobs
+
+
 # Filament Job Manager
 
 Work in progress ... 
